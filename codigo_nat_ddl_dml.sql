@@ -82,5 +82,14 @@ CREATE TABLE tblFacturaProducto
     codigoProducto VARCHAR(15),
     cantidad INT NOT NULL,
     valor INT NOT NULL,
-    PRIMARY KEY(numeroFactura)
+    PRIMARY KEY(numeroFactura, codigoProducto)
 );
+
+-- RELACIONES 
+
+-- EMPLEADO EMPRESA
+ALTER TABLE tblEmpleado 
+ADD CONSTRAINT tblempresa_tblempleado_empresa FOREIGN KEY(empresa)
+REFERENCES tblEmpresa(nit);
+
+
